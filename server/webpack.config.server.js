@@ -1,13 +1,15 @@
 const path = require('path')
-const HTMLPlugin = require('html-webpack-plugin')
 
 module.exports = {
+    // 执行环境，一般是浏览器，这里是node
+    target: 'node',
     entry: {
-        app: path.resolve(__dirname, '../client/app.js')
+        app: path.resolve(__dirname, './server-entry.js')
     },
     output: {
         // [name] name = app - entry>app
-        filename: '[name].[hash].js',
+        filename: 'server-entry.js',
+        libraryTarget: 'commonjs2',
         path: path.resolve(__dirname, '../dist'),
         publicPath: '' // '/pubilc'
     },
@@ -22,9 +24,5 @@ module.exports = {
                 path.resolve(__dirname, '../node_modules')
             ]
         }]
-    },
-    plugins: [
-        // 打包生成html，其中的js等文件可以直接在html上引入
-        new HTMLPlugin()
-    ]
+    }
 }
