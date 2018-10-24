@@ -1,7 +1,9 @@
 const path = require('path')
 const HTMLPlugin = require('html-webpack-plugin')
 
-module.exports = {
+const isDev = process.env.NODE_ENV === 'development'
+
+const config = {
     entry: {
         app: path.resolve(__dirname, '../client/app.js')
     },
@@ -30,3 +32,9 @@ module.exports = {
         })
     ]
 }
+
+if (isDev) {
+
+}
+
+module.exports = config
