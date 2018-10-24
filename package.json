@@ -8,7 +8,8 @@
         "clear": "rimraf dist",
         "build": "yarn run clear && webpack --config build/webpack.config.js",
         "build:server": "yarn run clear && webpack --config server/webpack.config.server.js",
-        "start": "yarn run build:server && node server/server.js"
+        "start": "yarn run build:server && node server/server.js",
+        "build:all": "yarn run build && webpack --config server/webpack.config.server.js && node server/server.js"
     },
     "repository": {
         "type": "git",
@@ -22,6 +23,7 @@
     "homepage": "https://gitlab.com/dream-Y/Webpack-React-Page-Example#readme",
     "dependencies": {
         "express": "^4.16.4",
+        "express-async-await": "^1.1.0",
         "react": "^16.5.2",
         "react-dom": "^16.5.2"
     },

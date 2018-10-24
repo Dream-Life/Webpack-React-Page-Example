@@ -11,7 +11,7 @@ module.exports = {
         filename: 'server-entry.js',
         libraryTarget: 'commonjs2',
         path: path.resolve(__dirname, '../dist'),
-        publicPath: '' // '/pubilc'
+        publicPath: '/public'
     },
     module: {
         rules: [{

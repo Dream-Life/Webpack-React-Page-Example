@@ -9,7 +9,7 @@ module.exports = {
         // [name] name = app - entry>app
         filename: '[name].[hash].js',
         path: path.resolve(__dirname, '../dist'),
-        publicPath: '' // '/pubilc'
+        publicPath: '/public'
     },
     module: {
         rules: [{
@@ -25,6 +25,8 @@ module.exports = {
     },
     plugins: [
         // 打包生成html，其中的js等文件可以直接在html上引入
-        new HTMLPlugin()
+        new HTMLPlugin({
+            template: path.resolve(__dirname, '../client/template.html')
+        })
     ]
 }
